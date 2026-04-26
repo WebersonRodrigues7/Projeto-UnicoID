@@ -7,6 +7,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(getAll)
     
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }

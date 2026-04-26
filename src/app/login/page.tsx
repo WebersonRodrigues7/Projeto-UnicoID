@@ -33,7 +33,7 @@ export default function LoginPage() {
         body: JSON.stringify(data)
       })
       const json = await res.json()
-      console.log(res.status, json)
+      
 
       if (!res.ok) {
         console.error(json.error)
