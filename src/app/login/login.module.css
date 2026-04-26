@@ -1,0 +1,142 @@
+
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1C1B21;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  display: flex;
+}
+
+.card .aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #292A2F;
+  border-right: 1px solid #26272C;
+  width: 300px;
+  padding: 40px 35px;
+}
+
+.card .aside header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card .aside header h1 {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.aside ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aside ul li p {
+  font-size: 13px;
+  color: grey;
+  line-height: 1.6;
+}
+
+.aside ul li p span {
+  color: beige;
+}
+
+.aside footer p {
+  font-size: 12px;
+  color: grey;
+}
+
+.sectionLogin {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  background-color: #26272C;
+}
+
+.sectionLogin header {
+  padding: 36px 32px 24px;
+  border-bottom: 1px solid #292A2F;
+}
+
+.sectionLogin header h1 {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.sectionLogin header p {
+  color: grey;
+  font-size: 13px;
+}
+
+.sectionLogin form {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px;
+  gap: 10px;
+}
+
+.sectionLogin form label {
+  color: beige;
+  font-size: 11px;
+  text-transform: uppercase;
+  
+}
+
+.sectionLogin form input {
+  padding: 9px 12px;
+  border: 1px solid #292A2F;
+  border-radius: 4px;
+  background-color: #1C1B21;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.sectionLogin form input:focus {
+  border-color: beige;
+}
+
+.sectionLogin form input::placeholder {
+  color: grey;
+}
+
+.sectionLogin form button {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid beige;
+  border-radius: 4px;
+  background-color: transparent;
+  color: beige;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.sectionLogin form button:hover {
+  background-color: beige;
+  color: #1C1B21;
+}
+
+
+@media (max-width: 730px) {
+  .card .aside {
+    display: none;
+  }
+
+  .sectionLogin {
+    width: 90vw;
+  }
+}

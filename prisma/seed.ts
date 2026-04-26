@@ -1,9 +1,10 @@
 import bcrypt from 'bcryptjs';
-import { prisma } from './prisma';
+import { prisma } from '../src/lib/prisma';
 
 async function main() {
   const hash = await bcrypt.hash('123456', 10);
 
+  
   await prisma.user.create({
     data: {
       email: 'admin@gmail.com',

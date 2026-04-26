@@ -1,0 +1,126 @@
+.header {
+  margin: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header .nav h1 {
+  color: white;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .nav .actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.header .nav .actions .icons {
+  margin: 1px;
+  color: grey;
+}
+
+.header .nav .actions span {
+  background-color: #26272c;
+  color: grey;
+  padding: 9px;
+  cursor: pointer;
+}
+.header .nav .actions span:hover {
+  color: white;
+}
+.header .nav .actions .search {
+  margin-left: 15px;
+}
+
+.header .nav .actions .filter {
+  margin-right: 15px;
+}
+
+.header .infos {
+  margin-top: 25px;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.infos p {
+  color: white;
+}
+
+.infos .allTypes {
+  display: flex;
+}
+
+.infos .many span {
+  color: grey;
+}
+
+
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  
+  margin-right: 30px;
+}
+
+.hamburguer span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #bfcfdf;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 20px 15px;
+  }
+
+  .hamburguer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .hamburguer:hover {
+    cursor: pointer;
+  }
+
+  .header .nav .actions {
+    display: none;
+  }
+
+
+  .header .nav .actions.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-right: 15px;
+    top: 70px;
+    left: auto,;
+    right: 0;
+    padding: 20px;
+  }
+
+  .header .nav .actions .filter {
+    margin: 0;
+  }
+
+  .header .nav .actions .search {
+    margin: 0;
+  }
+
+  
+}

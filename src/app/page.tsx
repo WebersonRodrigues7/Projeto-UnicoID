@@ -1,11 +1,7 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import LoginPage from "./login/page";
+import {redirect}  from "next/navigation";
 
 export default function Home() {
   return (
-    <main>
-      <LoginPage />
-    </main>
+    redirect('/login')
   );
 }

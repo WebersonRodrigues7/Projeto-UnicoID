@@ -1,0 +1,65 @@
+
+
+.SectionCard {
+    display: flex;
+    margin: 0px 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.SectionCard .Card {
+    width: 230px;
+    height: 280px;
+    background-color: #26272C;
+}
+
+.LEAD {
+    border-left: 2px solid aqua;
+    color: rgb(129, 129, 129);
+    font-size: .8em;
+    text-indent: 25px;
+    margin: 30px 0px 0px 0px;
+}
+
+.CLIENT{
+    color: rgb(129, 129, 129);
+    border-left: 2px solid rgb(248, 69, 69);
+    font-size: .8em;
+    text-indent: 25px;
+    margin: 30px 0px 0px 0px;
+}
+.Card h1 {
+    color: rgb(129, 129, 129);
+    margin: 150px 0px 0px 25px;
+    font-size: 1em;
+}
+
+.Card h2{
+    font-size: 1em;
+    line-height: 2em;
+    color: white;
+    margin: 0px 0px 0px 25px;
+}
+
+@media (max-width: 768px) {
+    .SectionCard {
+    display: flex;
+    margin: 0px 0px;
+    
+}
+  .SectionCard .Card {
+    width: 200px;
+    height: 250px;
+    background-color: #26272C;
+}
+
+.Card h1 {
+    color: rgb(129, 129, 129);
+    margin: 120px 0px 0px 25px;
+    font-size: 1em;
+}
+}
+
+
+

@@ -1,14 +1,16 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Style from './login.module.css'
 import { useForm } from "react-hook-form"
 import z from "zod"
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { HiMiniChartBarSquare } from 'react-icons/hi2';
 
 const schema = z.object({
-  email: z.email("Email inválido!"),
-  password: z.string("Senha inválida")
+  email: z.string().email("Email inválido!"),
+  password: z.string().min(6, "Senha inválida")
 })
 
 type LoginSchema = z.infer<typeof schema>
@@ -17,84 +19,81 @@ export default function LoginPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  
-  
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<LoginSchema>({
+    resolver: zodResolver(schema)
+  })
+
+  async function onSubmitForm(data: LoginSchema) {
+    setError('')
+    setLoading(true)
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+      const json = await res.json()
+
+      if (!res.ok) {
+        setError(json.error)
+        return
+      }
+      reset()
+      router.push("/dashboard")
+    } catch {
+      setError("Erro ao conectar com o servidor")
+    }
+    finally {
+      setLoading(false)
+    }
+  }
 
 
-  return (
-    <main>
 
-      <aside>
+ return (
+  <main className={Style.main}>
+    <div className={Style.card}>
+      <aside className={Style.aside}>
         <header>
-          <figure>
-            {}
-          </figure>
-          <span>Dashboard</span>
+          <p><HiMiniChartBarSquare size={30} color='white' /></p>
+          <h1>Dashboard</h1>
         </header>
-
         <ul>
           <li>
-            <p><strong>Visão completa</strong> de todos os dados e métricas em tempo real</p>
+            <p><span><strong>Visão completa</strong></span> de todos os dados e métricas em tempo real</p>
           </li>
           <li>
-            <p><strong>Gestão centralizada</strong> de clientes, leads e oportunidades</p>
+            <p><span><strong>Gestão centralizada</strong></span> de clientes, leads e oportunidades</p>
           </li>
           <li>
-            <p><strong>Relatórios detalhados</strong> exportáveis com filtros avançados</p>
+            <p><span><strong>Relatórios detalhados</strong></span> exportáveis com filtros avançados</p>
           </li>
         </ul>
-
         <footer>
-          <small>© 2025 Dashboard. Todos os direitos reservados.</small>
+          <p>© 2025 Dashboard. Todos os direitos reservados.</p>
         </footer>
       </aside>
 
-      <section>
+      <section className={Style.sectionLogin}>
         <header>
           <h1>Entrar na sua conta</h1>
           <p>Acesse o painel com suas credenciais</p>
         </header>
 
-  
+        <form onSubmit={handleSubmit(onSubmitForm)}>
+          <label htmlFor="email">Email</label>
+          <input {...register("email")} type="email" placeholder="seu@email.com" />
 
-        <form>
-          <fieldset>
-            <legend>Credenciais de acesso</legend>
+          <label htmlFor="password">Senha</label>
+          <input {...register("password")} type="password" placeholder="••••••••" />
 
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="seu@email.com"
-              autoComplete="email"
-              required
-              
-            />
-
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="••••••••"
-              autoComplete="current-password"
-              required
-              
-            />
-          </fieldset>
-
-          <label htmlFor="remember">
-            <input type="checkbox" id="remember" name="remember" />
-            <span>Lembrar de mim</span>
-          </label>
-
-          <a href="#">Esqueci a senha</a>
-
-          <button type="submit">Entrar</button>
+          <button type="submit" disabled={loading}>
+            {loading ? "Entrando..." : "Entrar"}
+          </button>
         </form>
       </section>
-
-    </main>
-  );
+    </div>
+  </main>
+);
 }
