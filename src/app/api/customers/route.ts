@@ -6,7 +6,6 @@ export async function GET(req: NextRequest) {
     const getAll = await prisma.customer.findMany();
     return NextResponse.json(getAll)
     
-
   } catch (err) {
     console.log(err);
   }

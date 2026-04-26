@@ -56,12 +56,13 @@
 
 .infos .allTypes {
   display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 .infos .many span {
   color: grey;
 }
-
 
 .hamburguer {
   display: none;
@@ -69,7 +70,7 @@
   gap: 5px;
   background: transparent;
   border: none;
-  
+
   margin-right: 30px;
 }
 
@@ -83,6 +84,10 @@
 @media (max-width: 768px) {
   .header {
     margin: 20px 15px;
+  }
+
+  .header .nav h1 {
+    font-size: clamp(1rem, 2vw + 1rem, 3rem);
   }
 
   .hamburguer {
@@ -100,16 +105,17 @@
     display: none;
   }
 
-
   .header .nav .actions.open {
     display: flex;
+    background-color: #26272c;
+    border: 1px solid #484852;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     margin-right: 15px;
     top: 70px;
-    left: auto,;
+    left: auto;
     right: 0;
     padding: 20px;
   }
@@ -121,6 +127,6 @@
   .header .nav .actions .search {
     margin: 0;
   }
-
-  
 }
+
+

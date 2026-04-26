@@ -60,17 +60,17 @@
   cursor: pointer;
 }
 
-.sect {
+.mainContent {
   margin-left: 100px;
   
 }
 
-.sect .footer {
+.mainContent .footer {
   display: flex;
   justify-content: end;
 }
 
-.sect .footer div{
+.mainContent .footer div{
   display: flex;
   border-radius: 5px;
   margin: 80px 50px 50px 0px;
@@ -79,3 +79,4 @@
   background-color: #26272C;
 
 }
+

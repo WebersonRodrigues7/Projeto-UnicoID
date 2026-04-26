@@ -1,6 +1,5 @@
 import { signToken } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import bcrypt from 'bcryptjs';
 import ms from "ms"
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -25,13 +24,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
-
-    if (!passwordMatch) {
+    if(!user || user.password !== password ){
       return NextResponse.json(
-        { error: 'Credenciais inválidas' },
-        { status: 401 },
-      );
+        {error: "Credenciais inválidas"},
+        {status: 401}
+      )
     }
 
     const token = signToken({ id: user.id, email: user.email });
