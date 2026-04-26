@@ -17,17 +17,18 @@ Uma dashboard com autenticação para fins de teste técnico
 - npx prisma generate
 - npm run dev
 
-**_ Login de acesso _**
-
-email: admin@gmail.com
-senha: 123456
-
 ## Variáveis de ambiente
 
 Crie um arquivo .env na raiz do projeto com as variáveis:
 
 - DATABASE_URL="file:./example.db"
 - JWT_SECRET=SeuJWTSecret
+
+
+**_ Login de acesso _**
+
+email: admin@gmail.com
+senha: 123456
 
 ## Estrutura de pastas
 
