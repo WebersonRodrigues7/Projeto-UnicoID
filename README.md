@@ -32,13 +32,14 @@ Crie um arquivo .env na raiz do projeto com as variáveis:
 
 ## Estrutura de pastas
 
-src
+```
+src/
 ├── app/
-| ├── api
-| | ├── auth/login/
-| ├── customers/
-| ├── dashboard/
-| ├── login/
-|
+│   ├── api/
+│   │   ├── auth/login/
+│   │   └── customers/
+│   ├── dashboard/
+│   └── login/
 ├── components/
-├── lib/
+└── lib/
+```
