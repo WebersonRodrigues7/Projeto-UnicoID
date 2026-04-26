@@ -14,7 +14,6 @@ Uma dashboard com autenticação para fins de teste técnico
 - git clone https://github.com/WebersonRodrigues7/Projeto-UnicoID.git
 - cd Projeto-UnicoID
 - npm i
-- npx prisma migrate dev --name Banco
 - npx prisma generate
 - npm run dev
 
