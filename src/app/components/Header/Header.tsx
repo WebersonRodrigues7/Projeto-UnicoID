@@ -37,7 +37,7 @@ export default function Header() {
             </section>
 
             <section className={Style.infos}>
-                <p className={Style.allTypes}>All types Icone <span>
+                <p className={Style.allTypes}>All Types<span>
                     <IoIosArrowDown />
                 </span></p>
                 <p className={Style.many}>11 <span>of</span> 2,937 <span>contacts</span></p>

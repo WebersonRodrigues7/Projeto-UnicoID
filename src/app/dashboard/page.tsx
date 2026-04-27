@@ -27,7 +27,7 @@ export default function DashboardPage() {
                 <aside className={Style.aside}>
                     <nav>
                         <section>
-                            <BiAperture color="white" size={30} />
+                            <BiAperture className={Style.logo} color="white" size={35} />
                         </section>
                         <section>
                             <RiRecordCircleLine onClick={() => setPopup(true)} className={Style.asideIcons} size={25} />

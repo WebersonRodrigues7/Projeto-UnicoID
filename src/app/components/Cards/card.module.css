@@ -15,7 +15,7 @@
 }
 
 .LEAD {
-    border-left: 2px solid aqua;
+    border-left: 2px solid cyan;
     color: rgb(129, 129, 129);
     font-size: .8em;
     text-indent: 25px;
@@ -24,7 +24,7 @@
 
 .CLIENT{
     color: rgb(129, 129, 129);
-    border-left: 2px solid rgb(248, 69, 69);
+    border-left: 2px solid coral;
     font-size: .8em;
     text-indent: 25px;
     margin: 30px 0px 0px 0px;
